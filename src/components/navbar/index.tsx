@@ -11,9 +11,9 @@ export const Navbar = () => {
     return (
         <>
             <nav className="bg-white flex items-center justify-between px-6 py-4 shadow-sm border-b border-gray-200">
-                <div className="flex items-center space-x-6">
+                <div className="flex items-center">
                     <div className="flex items-center">
-                        <Image src={Infigon} alt="Company Logo" className="h-8 mx-8" />
+                        <Image src={Infigon} alt="Company Logo" className="h-8 ml-4 my-2 " />
                     </div>
                     <div className="hidden md:flex space-x-2">
                         <NavLink>Home</NavLink>
