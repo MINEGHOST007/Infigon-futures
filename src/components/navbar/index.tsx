@@ -11,7 +11,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white flex items-center justify-between px-6 py-4 shadow-sm border-b border-gray-200">
+      <nav className="sticky top-0 z-50 bg-white flex items-center justify-between px-6 py-4 shadow-sm border-b border-gray-200">
         <div className="flex items-center">
           <div className="flex items-center">
             <Image

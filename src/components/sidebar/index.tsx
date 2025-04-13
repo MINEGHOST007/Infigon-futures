@@ -85,7 +85,7 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <aside className="sidebar h-auto md:h-[78.5vh] w-full md:w-[280px] lg:w-[320px] bg-white border-r shadow-sm border-gray-300 flex flex-col justify-start items-center py-6 md:py-8 lg:py-12 overflow-y-auto">
+    <aside className="sidebar h-auto max-w-full min-w-[25vw] bg-white border-r shadow-sm border-gray-300 flex flex-col justify-start items-center py-6 md:py-8 lg:py-12 overflow-y-auto">
       <div className="w-full space-y-1">
         {sideBarItems.map((item) => (
           <Section
@@ -96,7 +96,7 @@ const Sidebar: React.FC = () => {
           />
         ))}
       </div>
-      <div className="mt-auto pt-4 px-4 w-full flex justify-center">
+      <div className="pt-4 px-4 w-full flex justify-center">
         <button className="px-4 py-3 border shadow-sm poppins-semibold text-sm text-[#0047AB] border-[#0047AB] hover:bg-[#f0f5ff] hover:cursor-pointer rounded-lg flex items-center justify-center gap-3 w-full max-w-[240px] transition-colors">
           <span>Download Report Card</span>
           <FiDownload />

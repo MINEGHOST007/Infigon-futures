@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`poppins-regular antialiased`}>
+      <body className={`poppins-regular antialiased flex flex-col h-screen`}>
         <Navbar />
-        {children}
+        <div className="flex-grow overflow-y-auto">{children}</div>
       </body>
     </html>
   );
