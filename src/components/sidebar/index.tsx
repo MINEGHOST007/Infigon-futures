@@ -12,34 +12,41 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ item, isActive, onClick }) => {
   return (
-    <div className="w-full flex justify-start flex-col items-start pl-12">
+    <div className="w-full flex justify-start flex-col items-start px-4 md:px-6 lg:px-12 transition-all">
       <div
         onClick={() => onClick(item.title)}
-        className={`hover:cursor-pointer flex gap-2 rounded-lg w-[20vw] my-4 px-2 py-3 transition-all duration-300 ${
-          isActive ? "border-r-4 shadow-[0_4px_12px_rgba(0,0,0,0.12)]" : ""
+        className={`hover:cursor-pointer flex items-center gap-3 rounded-lg w-full max-w-[300px] my-3 px-3 py-3 transition-all duration-300 ${
+          isActive ? "border-r-4 shadow-[0_4px_12px_rgba(0,0,0,0.12)]" : "hover:bg-gray-50"
         }`}
         style={{
           borderColor: isActive ? item.color : "transparent",
         }}
       >
-        <Image alt="sidebar-icon" src={item.icon} width={38} height={38} />
-        <div>
-          <h3 className="cursor-pointer text-[#666B72]">{item.title}</h3>
+        <div className="flex-shrink-0">
+          <Image alt={`${item.title} icon`} src={item.icon} width={32} height={32} />
+        </div>
+        <div className="overflow-hidden">
+          <h3 className="text-[#666B72] font-medium text-sm md:text-base truncate">{item.title}</h3>
           {item.subheading && (
-            <h4 className="poppins-medium" style={{ color: item.color }}>
+            <h4 className="poppins-medium text-xs md:text-sm truncate" style={{ color: item.color }}>
               {item.subheading}
             </h4>
           )}
         </div>
       </div>
       {isActive && item.subroutes && (
-        <ul className="flex flex-col gap-2 px-2">
+        <ul className="flex flex-col gap-2 px-4 w-full max-w-[280px] mb-2">
           {item.subroutes.map((route) => (
-            <li key={route.name}>{route.name}</li>
+            <li 
+              key={route.name} 
+              className="text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded px-2 py-1.5 transition-colors"
+            >
+              {route.name}
+            </li>
           ))}
         </ul>
       )}
-      <div className="border-t-1 border-gray-300 w-[18vw] my-4"></div>
+      <div className="border-t border-gray-200 w-full my-2"></div>
     </div>
   );
 };
@@ -52,19 +59,23 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <aside className="sidebar h-[78.5vh] w-[25vw] bg-white border-r shadow-sm border-gray-300 flex flex-col justify-start items-center py-16">
-      {sideBarItems.map((item) => (
-        <Section
-          key={item.title}
-          item={item}
-          isActive={activeSection === item.title}
-          onClick={handleSectionClick}
-        />
-      ))}
-      <button className="px-6 py-4 border shadow-sm poppins-semibold text-[#0047AB] border-[#0047AB] hover:cursor-pointer rounded-lg flex items-center gap-2">
-        Download Report Card
-        <FiDownload />
-      </button>
+    <aside className="sidebar h-auto md:h-[78.5vh] w-full md:w-[280px] lg:w-[320px] bg-white border-r shadow-sm border-gray-300 flex flex-col justify-start items-center py-6 md:py-8 lg:py-12 overflow-y-auto">
+      <div className="w-full space-y-1">
+        {sideBarItems.map((item) => (
+          <Section
+            key={item.title}
+            item={item}
+            isActive={activeSection === item.title}
+            onClick={handleSectionClick}
+          />
+        ))}
+      </div>
+      <div className="mt-auto pt-4 px-4 w-full flex justify-center">
+        <button className="px-4 py-3 border shadow-sm poppins-semibold text-sm text-[#0047AB] border-[#0047AB] hover:bg-[#f0f5ff] hover:cursor-pointer rounded-lg flex items-center justify-center gap-3 w-full max-w-[240px] transition-colors">
+          <span>Download Report Card</span>
+          <FiDownload />
+        </button>
+      </div>
     </aside>
   );
 };
