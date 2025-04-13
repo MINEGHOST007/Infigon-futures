@@ -1,5 +1,6 @@
 interface Subroute {
   name: string;
+  path?: string;
 }
 
 export interface SideBarItem {
@@ -19,12 +20,15 @@ export const sideBarItems: SideBarItem[] = [
     subroutes: [
       {
         name: "Understanding Personality Explorer",
+        path: "/your-report/test1",
       },
       {
         name: "Personality Types",
+        path: "/your-report/test1/types",
       },
       {
         name: "Your Result",
+        path: "/your-report/test1/result",
       },
     ],
   },

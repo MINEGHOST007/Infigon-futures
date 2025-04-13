@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Navbar } from "../components/navbar/index";
 
 export const metadata: Metadata = {
   title: "Infigion Futures - Career Counselling",
-  description: "Infigion Futures is a leading career counselling company in India.",
+  description:
+    "Infigion Futures is a leading career counselling company in India.",
 };
 
 export default function RootLayout({
@@ -14,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`poppins-regular antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>
