@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { sideBarItems, SideBarItem } from "@/constants/sidebar";
 import Image from "next/image";
 import { FiDownload } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface SectionProps {
   item: SideBarItem;
@@ -71,10 +72,16 @@ const Section: React.FC<SectionProps> = ({ item, isActive, onClick }) => {
 };
 
 const Sidebar: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string | null>("TEST 1");
-
+  const pathname = usePathname();
+  const router = useRouter();
   const handleSectionClick = (title: string) => {
-    setActiveSection((prev) => (prev === title ? null : title));
+    const selectedItem = sideBarItems.find((item) => item.title === title);
+    if (selectedItem) {
+      const firstSubroute = selectedItem.subroutes[0]?.path;
+      if (firstSubroute) {
+        router.push(firstSubroute);
+      }
+    }
   };
 
   return (
@@ -84,7 +91,7 @@ const Sidebar: React.FC = () => {
           <Section
             key={item.title}
             item={item}
-            isActive={activeSection === item.title}
+            isActive={pathname.includes(item.key)}
             onClick={handleSectionClick}
           />
         ))}
