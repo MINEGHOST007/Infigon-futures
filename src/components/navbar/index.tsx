@@ -13,7 +13,7 @@ export const Navbar = () => {
             <nav className="bg-white flex items-center justify-between px-6 py-4 shadow-sm border-b border-gray-200">
                 <div className="flex items-center">
                     <div className="flex items-center">
-                        <Image src={Infigon} alt="Company Logo" className="h-8 ml-4 my-2 " />
+                        <Image src={Infigon} alt="Company Logo" className="hover:cursor-pointer h-8 ml-4 my-2 mr-4" />
                     </div>
                     <div className="hidden md:flex space-x-2">
                         <NavLink>Home</NavLink>
@@ -24,18 +24,18 @@ export const Navbar = () => {
                     </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                    <button className="text-gray-400 hover:text-gray-600">
+                    <button className="text-gray-400 hover:text-gray-600 hover:cursor-pointer">
                         <FaBell size={20} />
                     </button>
                     <button
-                        className="md:hidden text-gray-600 hover:text-gray-800"
+                        className="md:hidden text-gray-600 hover:text-gray-800 hover:cursor-pointer"
                         onClick={() => setMenuOpen(!isMenuOpen)}
                     >
                         {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
                     </button>
                     <button className='flex items-center justify-around gap-1'>
-                        <Image src={Profile} alt="Profile" className="h-8 w-8 rounded-full" />
-                        <IoIosArrowDown className="text-gray-400" size={16} />
+                        <Image src={Profile} alt="Profile" className="h-8 w-8 rounded-full hover:cursor-pointer" />
+                        <IoIosArrowDown className="text-gray-400 hover:cursor-pointer" size={16} />
                     </button>
                 </div>
             </nav>
