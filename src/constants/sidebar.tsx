@@ -1,4 +1,16 @@
-export const sideBarItems = [
+interface Subroute {
+  name: string;
+}
+
+export interface SideBarItem {
+  title: string;
+  icon: string;
+  color: string;
+  subheading: string;
+  subroutes: Subroute[];
+}
+
+export const sideBarItems: SideBarItem[] = [
   {
     title: "TEST 1",
     icon: "/brain.png",
