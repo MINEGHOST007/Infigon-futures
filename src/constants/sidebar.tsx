@@ -30,7 +30,7 @@ export const sideBarItems: SideBarItem[] = [
       },
       {
         name: "Your Result",
-        path: "/your-report/test1/result",
+        path: "/your-report/test1/result#personality",
       },
     ],
   },

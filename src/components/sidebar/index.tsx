@@ -56,7 +56,7 @@ const Section: React.FC<SectionProps> = ({ item, isActive, onClick }) => {
             <li
               key={route.name}
               className={`text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded px-2 py-1.5 transition-colors ${
-                pathname === route.path ? "font-bold" : ""
+                pathname === route.path?.split("#")[0] ? "font-bold" : ""
               }`}
             >
               <a href={route.path || "#"} className="block">

@@ -10,7 +10,9 @@ const ResultPage = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [currentHash, setCurrentHash] = useState<string>(window.location.hash);
+  const [currentHash, setCurrentHash] = useState<string>(
+    window.location.hash || "#personality"
+  );
 
   useEffect(() => {
     const container = scrollRef.current;
@@ -264,19 +266,259 @@ const ResultPage = () => {
           </div>
         );
       case "#preferences":
-        return <div>Leadership Component</div>;
+        return (
+          <div className="mt-5">
+            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
+              Preferences
+            </h3>
+            <div className="bg-white rounded-xl p-6 mt-4 border border-gray-300">
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "Intellectual Stimulation",
+                    description:
+                      "They thrive in environments that challenge them intellectually and provide opportunities for continuous learning and problem-solving.",
+                  },
+                  {
+                    title: "Autonomy",
+                    description:
+                      "They prefer to work independently with minimal supervision, valuing the freedom to implement their own ideas and approaches.",
+                  },
+                  {
+                    title: "Innovation",
+                    description:
+                      "They are drawn to creative environments that embrace new ideas and allow them to develop innovative solutions to complex problems.",
+                  },
+                  {
+                    title: "Efficiency",
+                    description:
+                      "They value systems and processes that are logical, streamlined, and designed for maximum effectiveness with minimal waste.",
+                  },
+                ].map((preference, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="text-blue-500 pt-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="#0047AB"
+                        width="24px"
+                      >
+                        <path d="M14.5998 8.00033H21C22.1046 8.00033 23 8.89576 23 10.0003V12.1047C23 12.3659 22.9488 12.6246 22.8494 12.8662L19.755 20.3811C19.6007 20.7558 19.2355 21.0003 18.8303 21.0003H2C1.44772 21.0003 1 20.5526 1 20.0003V10.0003C1 9.44804 1.44772 9.00033 2 9.00033H5.48184C5.80677 9.00033 6.11143 8.84246 6.29881 8.57701L11.7522 0.851355C11.8947 0.649486 12.1633 0.581978 12.3843 0.692483L14.1984 1.59951C15.25 2.12534 15.7931 3.31292 15.5031 4.45235L14.5998 8.00033ZM7 10.5878V19.0003H18.1606L21 12.1047V10.0003H14.5998C13.2951 10.0003 12.3398 8.77128 12.6616 7.50691L13.5649 3.95894C13.6229 3.73105 13.5143 3.49353 13.3039 3.38837L12.6428 3.0578L7.93275 9.73038C7.68285 10.0844 7.36341 10.3746 7 10.5878ZM5 11.0003H3V19.0003H5V11.0003Z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-lg text-gray-800">
+                        {preference.title}
+                      </h4>
+                      <p className="text-gray-600">{preference.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
       case "#interpersonal-interaction":
-        return <div>Personality Component</div>;
+        return (
+          <div className="mt-5">
+            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
+              Interpersonal Interaction
+            </h3>
+            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
+              {[
+                {
+                  title: "Direct",
+                  description:
+                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
+                },
+                {
+                  title: "Assertive",
+                  description:
+                    "Natural leaders who enjoy theoretical thinking and long-term planning. They often have strong intuitions about possibilities.",
+                },
+                {
+                  title: "Reserved",
+                  description:
+                    "Make decisions based on objective analysis rather than emotions. Value competence and knowledge above all else.",
+                },
+                {
+                  title: "Objective",
+                  description:
+                    "Once they set their mind on a goal, they pursue it with singular focus and determination until completion.",
+                },
+                {
+                  title: "Visionary",
+                  description:
+                    "Trust their own judgment implicitly and aren't afraid to voice their opinions or challenge conventional wisdom.",
+                },
+              ].map((item, index) => (
+                <li key={index} className="text-gray-800">
+                  <strong className="font-bold">{item.title}</strong>
+                  <br />
+                  <span className="text-gray-600 text-md">
+                    {item.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
       case "#work-culture":
-        return <div>Career Component</div>;
+        return (
+          <div className="mt-5">
+            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
+              Interpersonal Interaction
+            </h3>
+            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
+              {[
+                "Trust their own judgment implicitly and aren't afraid to voice their opinions or challenge conventional wisdom.",
+                "Trust their own judgment implicitly and aren't afraid to voice their opinions or challenge conventional wisdom.",
+                "Trust their own judgment implicitly and aren't afraid to voice their opinions or challenge conventional wisdom.",
+                "Trust their own judgment implicitly and aren't afraid to voice their opinions or challenge conventional wisdom.",
+              ].map((item, index) => (
+                <li key={index} className="text-gray-800">
+                  <span className="text-gray-600 text-md">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
       case "#roles":
-        return <div>Learning Component</div>;
+        return (
+          <div className="mt-5">
+            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
+              Roles and Tasks They Excel In
+            </h3>
+            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
+              {[
+                'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+                'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+                'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+                'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+              ].map((item, index) => (
+                <li key={index} className="text-gray-800">
+                  <span className="text-gray-600 text-md">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
       case "#case-studies":
-        return <div>Leadership Component</div>;
+        return (
+          <div className="mt-5">
+            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
+              Real World Case Studies
+            </h3>
+            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
+              {[
+                {
+                  title: "Entrepreneurship",
+                  description:
+                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
+                },
+                {
+                  title: "Strategic Planning",
+                  description:
+                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+                },
+              ].map((item, index) => (
+                <li key={index} className="text-gray-800">
+                  <strong className="font-bold">{item.title}</strong>
+                  <br />
+                  <span className="text-gray-600 text-md">
+                    {item.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
       case "#famous-personalities":
-        return <div>Leadership Component</div>;
+        return (
+          <div className="mt-5">
+            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
+              Famous Personalities
+            </h3>
+            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
+              {[
+                {
+                  title: "Famous Personalities",
+                  description:
+                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
+                },
+                {
+                  title: "Fictional Characters",
+                  description:
+                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+                },
+              ].map((item, index) => (
+                <li key={index} className="text-gray-800">
+                  <strong className="font-bold">{item.title}</strong>
+                  <br />
+                  <span className="text-gray-600 text-md">
+                    {item.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
       case "#recommendations":
-        return <div>Leadership Component</div>;
+        return (
+          <div className="mt-5">
+            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
+              Personal Growth Recommendations
+            </h3>
+            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
+              {[
+                {
+                  title: "Flexibility",
+                  description:
+                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
+                },
+                {
+                  title: "Emotional Intelligence",
+                  description:
+                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+                },
+                {
+                  title: "Collaboration",
+                  description:
+                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+                },
+                {
+                  title: "Patience",
+                  description:
+                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
+                },
+              ].map((item, index) => (
+                <li key={index} className="text-gray-800">
+                  <strong className="font-bold">{item.title}</strong>
+                  <br />
+                  <span className="text-gray-600 text-md">
+                    {item.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      case "#conclusion":
+        return (
+          <div className="mt-5">
+            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
+              Conclusion
+            </h3>
+            <p className="bg-[#0047AB] text-white p-4 rounded-md mt-4">
+              You thrive in structured, people-oriented roles where your
+              strengths in organization, empathy, and teamwork can shine. By
+              embracing personal growth strategies, you can mitigate weaknesses
+              and enhance your career success, as demonstrated by real-world
+              examples and case studies. Understanding and developing your MBTI
+              type can lead to fulfilling and impactful career paths.
+            </p>
+          </div>
+        );
       default:
         return <div>Personality Component</div>;
     }

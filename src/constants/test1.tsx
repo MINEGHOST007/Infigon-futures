@@ -257,6 +257,7 @@ const tabs = [
   { name: "Case Studies", href: "#case-studies" },
   { name: "Famous Personalities", href: "#famous-personalities" },
   { name: "Recommendations", href: "#recommendations" },
+  { name: "Conclusion", href: "#conclusion" },
 ];
 
 export { dichotomies, reportTopics, personalityTypes, tabs };
