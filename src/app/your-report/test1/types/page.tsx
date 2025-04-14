@@ -4,8 +4,8 @@ import { personalityTypes } from "@/constants/test1";
 
 const TypesPage = () => {
   return (
-    <section className="px-4 py-8 bg-white w-full mx-auto">
-      <h3 className="text-[#0047AB] poppins-bold text-2xl my-5">
+    <section className="px-4 py-4 bg-white w-full mx-auto">
+      <h3 className="text-[#0047AB] poppins-bold text-2xl my-4">
         Personality Types
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">

@@ -244,4 +244,19 @@ const personalityTypes = [
     image: "/commander.png",
   },
 ];
-export { dichotomies, reportTopics, personalityTypes };
+
+const tabs = [
+  { name: "Personality", href: "#personality" },
+  { name: "Characteristics", href: "#characteristics" },
+  { name: "Strengths/ Weaknesses", href: "#strengths-weaknesses" },
+  { name: "Work Style", href: "#work-style" },
+  { name: "Preferences", href: "#preferences" },
+  { name: "Interpersonal Interaction", href: "#interpersonal-interaction" },
+  { name: "Work Culture", href: "#work-culture" },
+  { name: "Roles", href: "#roles" },
+  { name: "Case Studies", href: "#case-studies" },
+  { name: "Famous Personalities", href: "#famous-personalities" },
+  { name: "Recommendations", href: "#recommendations" },
+];
+
+export { dichotomies, reportTopics, personalityTypes, tabs };

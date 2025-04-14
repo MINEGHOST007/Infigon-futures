@@ -132,3 +132,13 @@ body {
   font-weight: 900;
   font-style: italic;
 }
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+  }
+}
