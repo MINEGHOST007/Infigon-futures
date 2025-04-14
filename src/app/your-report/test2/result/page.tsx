@@ -108,52 +108,7 @@ const ResultPage = () => {
             </div>
           </div>
         );
-      case "#characteristics":
-        return (
-          <div className="mt-5">
-            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
-              Characteristics
-            </h3>
-            <ul className="list-disc marker:font-bold marker:text-black pl-10 space-y-3 mt-6 text-lg">
-              {[
-                {
-                  title: "Strategic and Analytical",
-                  description:
-                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
-                },
-                {
-                  title: "Independent and Visionary",
-                  description:
-                    "Natural leaders who enjoy theoretical thinking and long-term planning. They often have strong intuitions about possibilities.",
-                },
-                {
-                  title: "Logical and Rational",
-                  description:
-                    "Make decisions based on objective analysis rather than emotions. Value competence and knowledge above all else.",
-                },
-                {
-                  title: "Goal Oriented and Determined",
-                  description:
-                    "Once they set their mind on a goal, they pursue it with singular focus and determination until completion.",
-                },
-                {
-                  title: "Confident and Assertive",
-                  description:
-                    "Trust their own judgment implicitly and aren't afraid to voice their opinions or challenge conventional wisdom.",
-                },
-              ].map((item, index) => (
-                <li key={index} className="text-gray-800">
-                  <strong className="font-bold">{item.title}</strong>
-                  <br />
-                  <span className="text-gray-600 text-md">
-                    {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      case "#strengths-weaknesses":
+      case "#strengths":
         const traits = [
           {
             title: "Strategic Thinking",
@@ -218,51 +173,6 @@ const ResultPage = () => {
             </div>
           </div>
         );
-      case "#work-style":
-        return (
-          <div className="mt-5">
-            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
-              Work Style
-            </h3>
-            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
-              {[
-                {
-                  title: "Strategic and Analytical",
-                  description:
-                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
-                },
-                {
-                  title: "Independent and Visionary",
-                  description:
-                    "Natural leaders who enjoy theoretical thinking and long-term planning. They often have strong intuitions about possibilities.",
-                },
-                {
-                  title: "Logical and Rational",
-                  description:
-                    "Make decisions based on objective analysis rather than emotions. Value competence and knowledge above all else.",
-                },
-                {
-                  title: "Goal Oriented and Determined",
-                  description:
-                    "Once they set their mind on a goal, they pursue it with singular focus and determination until completion.",
-                },
-                {
-                  title: "Confident and Assertive",
-                  description:
-                    "Trust their own judgment implicitly and aren't afraid to voice their opinions or challenge conventional wisdom.",
-                },
-              ].map((item, index) => (
-                <li key={index} className="text-gray-800">
-                  <strong className="font-bold">{item.title}</strong>
-                  <br />
-                  <span className="text-gray-600 text-md">
-                    {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
       case "#preferences":
         return (
           <div className="mt-5">
@@ -316,7 +226,7 @@ const ResultPage = () => {
             </div>
           </div>
         );
-      case "#interpersonal-interaction":
+      case "#interaction":
         return (
           <div className="mt-5">
             <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
@@ -381,126 +291,6 @@ const ResultPage = () => {
             </ul>
           </div>
         );
-      case "#roles":
-        return (
-          <div className="mt-5">
-            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
-              Roles and Tasks They Excel In
-            </h3>
-            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
-              {[
-                'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-                'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-                'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-                'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-              ].map((item, index) => (
-                <li key={index} className="text-gray-800">
-                  <span className="text-gray-600 text-md">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      case "#case-studies":
-        return (
-          <div className="mt-5">
-            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
-              Real World Case Studies
-            </h3>
-            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
-              {[
-                {
-                  title: "Entrepreneurship",
-                  description:
-                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
-                },
-                {
-                  title: "Strategic Planning",
-                  description:
-                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-                },
-              ].map((item, index) => (
-                <li key={index} className="text-gray-800">
-                  <strong className="font-bold">{item.title}</strong>
-                  <br />
-                  <span className="text-gray-600 text-md">
-                    {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      case "#famous-personalities":
-        return (
-          <div className="mt-5">
-            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
-              Famous Personalities
-            </h3>
-            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
-              {[
-                {
-                  title: "Famous Personalities",
-                  description:
-                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
-                },
-                {
-                  title: "Fictional Characters",
-                  description:
-                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-                },
-              ].map((item, index) => (
-                <li key={index} className="text-gray-800">
-                  <strong className="font-bold">{item.title}</strong>
-                  <br />
-                  <span className="text-gray-600 text-md">
-                    {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      case "#recommendations":
-        return (
-          <div className="mt-5">
-            <h3 className="text-[#0047AB] poppins-bold text-xl font-semibold">
-              Personal Growth Recommendations
-            </h3>
-            <ul className="list-disc marker:font-bold marker:text-black py-8 px-10 mt-5 space-y-3 text-lg border border-gray-300 rounded-xl">
-              {[
-                {
-                  title: "Flexibility",
-                  description:
-                    "They are friendly, approachable, & enjoy being around people. They are often seen as the 'hosts' of their social circles.",
-                },
-                {
-                  title: "Emotional Intelligence",
-                  description:
-                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-                },
-                {
-                  title: "Collaboration",
-                  description:
-                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-                },
-                {
-                  title: "Patience",
-                  description:
-                    'They are friendly, approachable, & enjoy being around people. They are often seen as the "hosts" of their social circles.',
-                },
-              ].map((item, index) => (
-                <li key={index} className="text-gray-800">
-                  <strong className="font-bold">{item.title}</strong>
-                  <br />
-                  <span className="text-gray-600 text-md">
-                    {item.description}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
       case "#conclusion":
         return (
           <div className="mt-5">
@@ -523,10 +313,27 @@ const ResultPage = () => {
   }, [currentHash]);
 
   return (
-    <section className="px-4 py-4 bg-white w-full mx-auto">
-      <h3 className="text-[#309759] poppins-bold text-2xl my-4">
-        <span className="text-black">Your</span> Result
-      </h3>
+    <section className="py-4 px-4 bg-white w-full mx-auto">
+      <div className="flex items-center justify-start gap-2 mb-8">
+        <h3 className="text-[#309759] poppins-bold text-2xl my-4 border-r-2 border-gray-300 pr-5">
+          <span className="text-black">Your</span> Result
+        </h3>
+
+        <div
+          key={"1"}
+          className={`px-2 py-3 font-bold border-b-2 border-b-[#309759]`}
+        >
+          PRIMARY INTEREST
+        </div>
+
+        <div key={"2"} className={`px-2 py-3 font-bold hover:pointer-cursor`}>
+          SECONDARY INTEREST
+        </div>
+
+        <div key={"3"} className={`px-2 py-3 font-bold hover:pointer-cursor`}>
+          TERITIARY INTEREST
+        </div>
+      </div>
 
       <div
         ref={scrollRef}
@@ -546,12 +353,12 @@ const ResultPage = () => {
           <div
             key={index}
             className={`px-2 select-none ${
-              tab.href === currentHash ? "border-b-3 border-[#0047AB]" : ""
+              tab.href === currentHash ? "border-b-3 border-[#309759]" : ""
             }`}
           >
             <Link
               href={tab.href}
-              className="poppins-bold text-gray-600 hover:text-[#0047AB] whitespace-nowrap select-none"
+              className="poppins-bold text-gray-600 hover:text-[#309759] whitespace-nowrap select-none"
               draggable="false"
               onClick={(e) => {
                 e.preventDefault();
@@ -564,6 +371,7 @@ const ResultPage = () => {
           </div>
         ))}
       </div>
+
       {renderComponent()}
     </section>
   );
