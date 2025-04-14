@@ -10,9 +10,7 @@ const ResultPage = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [currentHash, setCurrentHash] = useState<string>(
-    window.location.hash || "#personality"
-  );
+  const [currentHash, setCurrentHash] = useState<string>("#personality");
 
   useEffect(() => {
     const container = scrollRef.current;
