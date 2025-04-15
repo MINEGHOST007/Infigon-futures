@@ -520,7 +520,7 @@ const ResultPage = () => {
       default:
         return <div>Personality Component</div>;
     }
-  }, [currentHash]);
+  }, [currentHash, type.code, type.color, type.description, type.image, type.tags, type.title]);
 
   return (
     <section className="px-4 py-4 bg-white w-full mx-auto">

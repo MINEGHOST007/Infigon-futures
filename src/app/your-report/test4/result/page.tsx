@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { linearProgressData, scoreCategories, tabs } from "@/constants/test3";
+import { scoreCategories, tabs } from "@/constants/test3";
 import RelevanceLegend from "@/components/relevance";
 import ScoreCard from "@/components/scorecard";
 import CircularProgress from "../../../../components/circularProgress/index";
