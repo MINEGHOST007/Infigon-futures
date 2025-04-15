@@ -45,10 +45,10 @@ const RiasecPage = () => {
         {emotionalElements.map(({ id, label, color, dot }) => (
           <div key={id} className="flex flex-col items-center">
             <div
-              className={`w-36 h-36 rounded-full bg-gradient-to-b ${color} flex items-end justify-center relative`}
+              className={`w-36 h-36 rounded-full bg-gradient-to-b ${color} flex items-center justify-center relative`}
             >
               <div
-                className={`w-10 h-10 ${dot} rounded-full flex items-center justify-center text-white text-sm font-bold absolute bottom-2`}
+                className={`w-10 h-10 ${dot} rounded-full flex items-center justify-center text-white text-sm font-bold`}
               >
                 {id}
               </div>

@@ -89,7 +89,7 @@ const ScoreCard: React.FC<ScoreCardProps> = ({
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-3">
           <div
-            className={`w-8 h-8 rounded-full border-2 ${getCircleColor(
+            className={`w-8 h-8 rounded-full border-2 border-gray-300 ${getCircleColor(
               id
             )} flex items-center justify-center font-semibold`}
           >
@@ -112,7 +112,7 @@ const ScoreCard: React.FC<ScoreCardProps> = ({
           ></div>
         </div>
       </div>
-      <div className="border rounded-lg p-4 mb-4">
+      <div className="border-2 border-gray-300 rounded-lg p-4 mb-4">
         <p className="text-gray-700 mb-4">{description}</p>
 
         <div className="space-y-3">
