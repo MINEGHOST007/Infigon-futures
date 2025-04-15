@@ -46,61 +46,31 @@ const ResultPage = () => {
   };
 
   const type = {
-    code: "INTJ Personality",
-    title: "Inspector",
+    title: "Kinesthetic",
     description:
       "Congratulations on taking the first step for personalized Career Planning & Assessment! We understand the significance of making informed decisions as you navigate your academic journey and future career. We are committed to empowering individuals with the tools and insights needed to confidently navigate the world of careers and education.",
-    color: "#D9E9F0",
-    image: "/inspector.png",
-    tags: ["STRATEGIC", "ANALYTICAL", "INDEPENDENT"],
+    color: "#FF69B4",
+    image: "/ear.png",
   };
 
   const renderComponent = useCallback(() => {
     switch (currentHash) {
       case "#personality":
         return (
-          <div className="w-full rounded-2xl text-center flex flex-col md:flex-row py-4 bg-white poppins-regular">
-            <div
-              className="rounded-lg h-48 flex items-center justify-center mb-3 flex-1/3"
-              style={{ backgroundColor: type.color }}
-            >
+          <div className="w-full rounded-2xl text-center flex flex-col py-4 bg-white poppins-regular">
+            <div className="rounded-lg h-48 flex items-center justify-start mb-3 flex-1/3">
               <Image
-                src={type.image || "/architect.png"}
-                alt={type.title || "Architect"}
+                src={type.image || "/ear.png"}
+                alt={type.title || "Kinesthetic"}
                 width={100}
                 height={100}
                 className="h-28 object-contain"
               />
+              <h3 className={`font-bold`} style={{ color: type.color }}>
+                {type.title}
+              </h3>
             </div>
             <div className="flex-2/3 flex flex-col justify-start items-start px-4">
-              <div className="flex flex-row justify-start gap-4 items-center mb-2 w-full">
-                <h2 className="text-xl font-bold text-gray-800">
-                  {type.title || "Architect"}
-                </h2>
-                <span
-                  className={`text-md font-bold border-l-2 border-gray-400 pl-4`}
-                  style={{
-                    color: `color-mix(in srgb, ${type.color}, black 60%)`,
-                  }}
-                >
-                  {type.code || "INTJ Personality"}
-                </span>
-              </div>
-              <div className="flex flex-wrap gap-2 mb-2">
-                {(type.tags || ["STRATEGIC", "ANALYTICAL", "INDEPENDENT"]).map(
-                  (tag, index) => (
-                    <span
-                      key={index}
-                      style={{
-                        color: `color-mix(in srgb, ${type.color}, black 60%)`,
-                      }}
-                      className={`text-xs font-bold bg-[${type.color}] px-3 py-1 rounded-full`}
-                    >
-                      {tag}
-                    </span>
-                  )
-                )}
-              </div>
               <p className="text-sm text-gray-600 leading-relaxed text-start">
                 {type.description ||
                   "Congratulations on taking the first step for personalized Career Planning & Assessment! We understand the significance of making informed decisions as you navigate your academic journey and future career. We are committed to empowering individuals with the tools and insights needed to confidently navigate the world of careers and education."}
@@ -520,7 +490,7 @@ const ResultPage = () => {
       default:
         return <div>Personality Component</div>;
     }
-  }, [currentHash, type.code, type.color, type.description, type.image, type.tags, type.title]);
+  }, [currentHash, type.color, type.description, type.image, type.title]);
 
   return (
     <section className="px-4 py-4 bg-white w-full mx-auto">
