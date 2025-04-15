@@ -1,4 +1,6 @@
 import { reportTopics } from "@/constants/test3";
+import { learningstyles } from "@/constants/test5";
+import Image from "next/image";
 import React from "react";
 
 const UnderstandingPage = () => {
@@ -18,6 +20,30 @@ const UnderstandingPage = () => {
         Kinesthetic.
       </p>
       <br />
+      <div className="flex flex-col md:flex-row gap-4">
+        {learningstyles.map((style) => (
+          <div
+            className="group md:w-1/3 p-6 rounded-xl transition-all duration-300 hover:shadow-lg cursor-pointer border border-gray-200 hover:border-[#DE5AFF] relative"
+            key={style.id}
+          >
+            <div className="flex flex-col items-center">
+              <Image
+                height={24}
+                width={24}
+                src={`/${style.image}`}
+                alt={style.name}
+                className="w-16 h-16 mb-4 transition-transform duration-300 group-hover:scale-110"
+              />
+              <h3 className="poppins-bold text-lg mb-2 text-center">
+                {style.name}
+              </h3>
+              <p className="text-[#5B6871] text-sm text-center opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-[100px] transition-all duration-300">
+                {style.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
       <h3 className="text-[#0047AB] poppins-bold my-3">
         The purposes and applications of learning styles in career development
         include
